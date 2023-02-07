@@ -1,0 +1,11 @@
+<ul>
+    {% for company_loc in all_companies_loc %}
+    <li><a href="detail_loc/{{ company_loc.id }}/">{{ company_loc.company_name }}</a> </li>
+    {% endfor %}
+</ul>
+
+<ul>
+    {% for company_int in all_companies_int %}
+    <li><a href="detail_int/{{ company_int.id }}/">{{ company_int.company_name }}</a> </li>
+    {% endfor %}
+</ul>

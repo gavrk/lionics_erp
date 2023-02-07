@@ -1,18 +1,17 @@
 from django.http import HttpResponse
+from django.template import loader
 from .models import CompanyLoc, CompanyInt
 
 def index(request):
     all_companies_loc = CompanyLoc.objects.all()
     all_companies_int = CompanyInt.objects.all()
-    html = ''
-    for company_loc in all_companies_loc:
-        url = '/companies/detail_loc/' + str(company_loc.id) + '/'
-        html += '<a href="' + url + '">' + company_loc.company_name + '</a><br>'
-    for company_int in all_companies_int:
-        url = '/companies/detail_int/' + str(company_int.id) + '/'
-        html += '<a href="' + url + '">' + company_int.company_name + '</a><br>'
+    template = loader.get_template('companies/index.html')
+    context = {
+        'all_companies_loc': all_companies_loc,
+        'all_companies_int': all_companies_int,
+    }
 
-    return HttpResponse(html)
+    return HttpResponse(template.render(context, request))
 
 
 def register_loc(request):
