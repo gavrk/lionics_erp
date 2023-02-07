@@ -1,11 +1,17 @@
-<ul>
-    {% for company_loc in all_companies_loc %}
-    <li><a href="detail_loc/{{ company_loc.id }}/">{{ company_loc.company_name }}</a> </li>
-    {% endfor %}
-</ul>
+<div>
+    <h3>Список локальных компаний</h3>
+    <ul>
+        {% for company_loc in all_companies_loc %}
+        <li><a href="detail_loc/{{ company_loc.id }}/">{{ company_loc.company_name }}</a> </li>
+        {% endfor %}
+    </ul>
+</div>
 
-<ul>
-    {% for company_int in all_companies_int %}
-    <li><a href="detail_int/{{ company_int.id }}/">{{ company_int.company_name }}</a> </li>
-    {% endfor %}
-</ul>
+<div>
+    <h3>Список интернациональных компаний</h3>
+    <ul>
+        {% for company_int in all_companies_int %}
+        <li><a href="detail_int/{{ company_int.id }}/">{{ company_int.company_name }}</a> </li>
+        {% endfor %}
+    </ul>
+</div>

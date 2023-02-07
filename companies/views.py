@@ -1,17 +1,16 @@
-from django.http import HttpResponse
-from django.template import loader
+from django.http import HttpResponse, Http404
+from django.shortcuts import render
 from .models import CompanyLoc, CompanyInt
 
 def index(request):
     all_companies_loc = CompanyLoc.objects.all()
     all_companies_int = CompanyInt.objects.all()
-    template = loader.get_template('companies/index.html')
     context = {
         'all_companies_loc': all_companies_loc,
         'all_companies_int': all_companies_int,
     }
 
-    return HttpResponse(template.render(context, request))
+    return render(request, 'companies/index.html', context)
 
 
 def register_loc(request):
@@ -19,7 +18,11 @@ def register_loc(request):
 
 
 def detail_loc(request, companyloc_id):
-    return HttpResponse('<h1>Here is a page for editing or deleting of local company ' + str(companyloc_id) + '</h1>')
+    try:
+        company_loc = CompanyLoc.objects.get(pk=companyloc_id)
+    except CompanyLoc.DoesNotExist:
+        raise Http404('Local company does not exist')
+    return render(request, 'companies/detail_loc.html', {'company_loc': company_loc})
 
 
 def register_int(request):
@@ -27,4 +30,8 @@ def register_int(request):
 
 
 def detail_int(request, companyint_id):
-    return HttpResponse('<h1>Here is a page for editing or deleting of international company ' + str(companyint_id) + '</h1>')
+    try:
+        company_int = CompanyInt.objects.get(pk=companyint_id)
+    except CompanyInt.DoesNotExist:
+        raise Http404('International company does not exist')
+    return render(request, 'companies/detail_int.html', {'company_int': company_int})
