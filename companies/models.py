@@ -24,5 +24,16 @@ class CompanyLoc(models.Model):
         return self.company_name
 
 
+class CompanyInt(models.Model):
+    company_name = models.CharField(max_length=250)
+    pos_per_acc = models.CharField(max_length=250)
+    position_nom = models.CharField(max_length=250)
+    person_nom = models.CharField(max_length=250)
+    acting_on = models.CharField(max_length=100)
+    legal_addr = models.CharField(max_length=500)
+    postal_addr = models.CharField(max_length=500)
+    tel = models.CharField(max_length=100)
+    email = models.CharField(max_length=100)
 
-
+    def __str__(self):
+        return self.company_name
