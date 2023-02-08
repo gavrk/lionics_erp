@@ -1,0 +1,49 @@
+{% extends 'companies/base.html' %}
+
+{% block body %}
+
+    <br><br><br>
+    <div class="container-fluid">
+        <h2>Создаем новый профиль локальной компании</h2>
+        <br>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg">
+                    <label for="company_type" class="form-label">Тип компании</label><br>
+                    <select class="form-select" id='company_type' aria-label="Default select example">
+                        <option selected>Общество с ограниченной ответственностью</option>
+                        <option value="1">Индивидуальный предприниматель</option>
+                        <option value="2">Закрытое акционерное общество</option>
+                        <option value="3">Открытое акционерное общество</option>
+                    </select>
+                    <p></p><em><small>Выберите из выпадающего списка</small></em></label></p>
+                </div>
+                <div class="col-lg">
+                    <label for="company_name" class="form-label">Название компании</label><br>
+                    <input type="text" class="form-control" id="company_name" placeholder='Мастодонт'>
+                    <p></p><em><small>Без сокращений, без капса (разве что аббревиатура), с большой буквы, без кавычек</small></em></label></p>
+                </div>
+                <div class="col-lg">
+                    <label for="company_name" class="form-label">В лице</label><br>
+                    <input type="text" class="form-control" id="company_name" placeholder='генерального директора Христозопуло Давида Виссарионовича'>
+                    <p></p><em><small>С маленькой буквы, с указанием должности, без сокращений</small></em></label></p>
+                </div>
+            </div>
+            <br><br>
+            <div class="row">
+                <div class="col-lg">col-sm</div>
+                <div class="col-lg">col-sm</div>
+                <div class="col-lg">col-sm</div>
+            </div>
+            <br><br>
+            <div class="row">
+                <div class="col-lg">col-sm</div>
+                <div class="col-lg">col-sm</div>
+                <div class="col-lg">col-sm</div>
+            </div>
+        </div>
+
+    </div>
+
+
+{% endblock %}
