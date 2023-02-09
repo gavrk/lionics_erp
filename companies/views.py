@@ -29,3 +29,7 @@ def register_int(request):
 def detail_int(request, companyint_id):
     company_int = get_object_or_404(CompanyLoc, pk=companyint_id)
     return render(request, 'companies/detail_int.html', {'company_int': company_int})
+
+
+def type_selected(request, new_loc_type):
+    return render(request, 'companies/register_loc.html')

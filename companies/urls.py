@@ -17,4 +17,7 @@ urlpatterns = [
 
     # /companies/detail_int/some_id/
     path('detail_int/<int:companyint_id>/', views.detail_int, name='detail_int'),
+
+    # /companies/type_selected/
+    path('type_selected/', views.type_selected, name='type_selected'),
 ]
