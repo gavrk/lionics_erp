@@ -1,7 +1,9 @@
 from django.db import models
+from django.urls import reverse
 
 
 class CompanyLoc(models.Model):
+    company_type = models.CharField(max_length=100)
     company_name = models.CharField(max_length=250)
     pos_per_acc = models.CharField(max_length=250)
     position_nom = models.CharField(max_length=250)
@@ -22,6 +24,9 @@ class CompanyLoc(models.Model):
 
     def __str__(self):
         return self.company_name
+
+    def get_absolute_url(self):
+        return reverse('index')
 
 
 class CompanyInt(models.Model):

@@ -1,0 +1,183 @@
+<input type="hidden" name="csrfmiddlewaretoken" value="gDaS9hZcbmQnaxKDQZju5OWt4sUCP4eiNpyslijMdcxqfiglxyPhYUGnce5mhbp7">
+
+<br><br><br>
+<h2>Создаем новый локальный профиль</h2>
+
+<div class="container-fluid">
+
+  <br><h3>Имя профиля</h3><br>
+
+  <div class="row">
+    <div class="row row-cols-3">
+
+      <div class="form-group">
+        <label class="control-label" for="id_company_type">Форма собственности:</label>
+        <select class="form-select" name="company_type" id="id_company_type" required="" value="{{ companyloc.company_type }}" aria-label="Default select example">
+          <option selected>Общество с ограниченной ответственностью</option>
+          <option>Индивидуальный предприниматель</option>
+          <option>Физическое лицо</option>
+          <option>Закрытое акционерное общество</option>
+          <option>Открытое акционерное общество</option>
+        </select>
+        <label class="control-label" for="id_company_type"><small>Тут комментарий по заполнению</small></label>
+        <div><br></div>
+      </div>
+
+      <div class="form-group">
+        <label class="control-label" for="id_company_name">Имя компании:</label>
+        <input class="form-control" placeholder='Мастодонт' type="text" name="company_name" maxlength="250" required="" value="{{ companyloc.company_name }}" id="id_company_name">
+        <label class="control-label" for="id_company_name"><small>Тут комментарий по заполнению</small></label>
+        <div><br></div>
+      </div>
+
+    </div>
+  </div>
+
+  <br><h3>Представитель</h3><br>
+
+  <div class="row">
+    <div class="row row-cols-3">
+
+      <div class="form-group">
+        <label class="control-label" for="id_pos_per_acc">Должность и ФИО в род. падеже:</label>
+        <input class="form-control" placeholder='генерального директора Христозопуло Давида Виссарионовича' type="text" name="pos_per_acc" maxlength="250" required="" value="{{ companyloc.pos_per_acc }}" id="id_pos_per_acc">
+        <label class="control-label" for="id_pos_per_acc"><small>Тут комментарий по заполнению</small></label>
+        <div><br></div>
+      </div>
+
+      <div class="form-group">
+        <label class="control-label" for="id_position_nom">Должность представителя в им. падеже:</label>
+        <input class="form-control" placeholder='Генеральный директор' type="text" name="position_nom" maxlength="250" required="" value="{{ companyloc.position_nom }}" id="id_position_nom">
+        <label class="control-label" for="id_position_nom"><small>Тут комментарий по заполнению</small></label>
+        <div><br></div>
+      </div>
+
+      <div class="form-group">
+        <label class="control-label" for="id_person_nom">ФИО представителя в им. падеже:</label>
+        <input class="form-control" placeholder='Христозопуло Давид Виссарионович' type="text" name="person_nom" maxlength="250" required="" value="{{ companyloc.person_nom }}" id="id_person_nom">
+        <label class="control-label" for="id_person_nom"><small>Тут комментарий по заполнению</small></label>
+        <div><br></div>
+      </div>
+
+      <div class="form-group">
+        <label class="control-label" for="id_acting_on">Действует на основании (род. падеж):</label>
+        <input class="form-control" placeholder='Устава' type="text" name="acting_on" maxlength="250" required="" value="{{ companyloc.acting_on }}" id="id_acting_on">
+        <label class="control-label" for="id_acting_on"><small>Тут комментарий по заполнению</small></label>
+        <div><br></div>
+      </div>
+
+    </div>
+  </div>
+
+  <br><h3>Контакты</h3><br>
+
+  <div class="row">
+    <div class="row row-cols-3">
+
+      <div class="form-group">
+        <label class="control-label" for="id_acting_on">Действует на основании (род. падеж):</label>
+        <input class="form-control" placeholder='Устава' type="text" name="acting_on" maxlength="250" required="" value="{{ companyloc.acting_on }}" id="id_acting_on">
+        <label class="control-label" for="id_acting_on"><small>Тут комментарий по заполнению</small></label>
+        <div><br></div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <span class="test-danger small"><ul class="errorlist"><li>This field is required.</li></ul></span>
+    </div>
+    <label class="control-label col-sm-2"><label for="id_legal_addr">Legal addr:</label></label>
+    <div class="col-sm-10"><input type="text" name="legal_addr" maxlength="500" required="" id="id_legal_addr"></div>
+  </div>
+
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <span class="test-danger small"><ul class="errorlist"><li>This field is required.</li></ul></span>
+    </div>
+    <label class="control-label col-sm-2"><label for="id_postal_addr">Postal addr:</label></label>
+    <div class="col-sm-10"><input type="text" name="postal_addr" maxlength="500" required="" id="id_postal_addr"></div>
+  </div>
+
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <span class="test-danger small"><ul class="errorlist"><li>This field is required.</li></ul></span>
+    </div>
+    <label class="control-label col-sm-2"><label for="id_tel">Tel:</label></label>
+    <div class="col-sm-10"><input type="text" name="tel" maxlength="100" required="" id="id_tel"></div>
+  </div>
+
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <span class="test-danger small"><ul class="errorlist"><li>This field is required.</li></ul></span>
+    </div>
+    <label class="control-label col-sm-2"><label for="id_email">Email:</label></label>
+    <div class="col-sm-10"><input type="text" name="email" maxlength="100" required="" id="id_email"></div>
+  </div>
+
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <span class="test-danger small"><ul class="errorlist"><li>This field is required.</li></ul></span>
+    </div>
+    <label class="control-label col-sm-2"><label for="id_bank_name">Bank name:</label></label>
+    <div class="col-sm-10"><input type="text" name="bank_name" maxlength="250" required="" id="id_bank_name"></div>
+  </div>
+
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <span class="test-danger small"><ul class="errorlist"><li>This field is required.</li></ul></span>
+    </div>
+    <label class="control-label col-sm-2"><label for="id_bic">Bic:</label></label>
+    <div class="col-sm-10"><input type="text" name="bic" maxlength="50" required="" id="id_bic"></div>
+  </div>
+
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <span class="test-danger small"><ul class="errorlist"><li>This field is required.</li></ul></span>
+    </div>
+    <label class="control-label col-sm-2"><label for="id_curr_acc">Curr acc:</label></label>
+    <div class="col-sm-10"><input type="text" name="curr_acc" maxlength="250" required="" id="id_curr_acc"></div>
+  </div>
+
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <span class="test-danger small"><ul class="errorlist"><li>This field is required.</li></ul></span>
+    </div>
+    <label class="control-label col-sm-2"><label for="id_corr_acc">Corr acc:</label></label>
+    <div class="col-sm-10"><input type="text" name="corr_acc" maxlength="250" required="" id="id_corr_acc"></div>
+  </div>
+
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <span class="test-danger small"><ul class="errorlist"><li>This field is required.</li></ul></span>
+    </div>
+    <label class="control-label col-sm-2"><label for="id_inn">Inn:</label></label>
+    <div class="col-sm-10"><input type="text" name="inn" maxlength="250" required="" id="id_inn"></div>
+  </div>
+
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <span class="test-danger small"><ul class="errorlist"><li>This field is required.</li></ul></span>
+    </div>
+    <label class="control-label col-sm-2"><label for="id_kpp">Kpp:</label></label>
+    <div class="col-sm-10"><input type="text" name="kpp" maxlength="250" required="" id="id_kpp"></div>
+  </div>
+
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <span class="test-danger small"><ul class="errorlist"><li>This field is required.</li></ul></span>
+    </div>
+    <label class="control-label col-sm-2"><label for="id_ogrn">Ogrn:</label></label>
+    <div class="col-sm-10"><input type="text" name="ogrn" maxlength="250" required="" id="id_ogrn"></div>
+  </div>
+
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <span class="test-danger small"><ul class="errorlist"><li>This field is required.</li></ul></span>
+    </div>
+    <label class="control-label col-sm-2"><label for="id_okpo">Okpo:</label></label>
+    <div class="col-sm-10"><input type="text" name="okpo" maxlength="250" required="" id="id_okpo"></div>
+  </div>
+
+</div>

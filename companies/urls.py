@@ -6,8 +6,8 @@ urlpatterns = [
     # /companies/
     path('', views.index, name='index'),
 
-    # /companies/register_loc/
-    path('register_loc/', views.register_loc, name='register_loc'),
+    # /companies/register_loc/some_new_companyloc_id
+    path(r'register_loc/$', views.CompanyLocCreate.as_view(), name='register_loc'),
 
     # /companies/detail_loc/some_id/
     path('detail_loc/<int:companyloc_id>/', views.detail_loc, name='detail_loc'),

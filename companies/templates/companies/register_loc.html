@@ -12,9 +12,8 @@
                 <div class="col-lg">
                     <label for="company_type" class="form-label">Тип компании</label><br>
                     <div class="input-group mb-3">
-                        <form action="{% url 'companies:type_selected' %}" method="post">
+                        <form class="form-horizontal" action="" method="post" enctype="multipart/form-data">
                             {% csrf_token %}
-
                             <select class="form-select" id='company_type' aria-label="Default select example">
                                 <option selected>Общество с ограниченной ответственностью</option>
                                 <option value="1">Индивидуальный предприниматель</option>
