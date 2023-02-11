@@ -75,109 +75,106 @@
     <div class="row row-cols-3">
 
       <div class="form-group">
-        <label class="control-label" for="id_acting_on">Действует на основании (род. падеж):</label>
-        <input class="form-control" placeholder='Устава' type="text" name="acting_on" maxlength="250" required="" value="{{ companyloc.acting_on }}" id="id_acting_on">
-        <label class="control-label" for="id_acting_on"><small>Тут комментарий по заполнению</small></label>
+        <label class="control-label" for="id_legal_addr">Юридический адрес:</label>
+        <input class="form-control" placeholder='603001, г. Н. Новгород, ул. Кожевенная, дом 4, оф. 9' type="text" name="legal_addr" maxlength="500" required="" value="{{ companyloc.legal_addr }}" id="id_legal_addr">
+        <label class="control-label" for="id_legal_addr"><small>Тут комментарий по заполнению</small></label>
+        <div><br></div>
+      </div>
+
+      <div class="form-group">
+        <label class="control-label" for="id_postal_addr">Почтовый адрес:</label>
+        <input class="form-control" placeholder='603001, г. Н. Новгород, ул. Кожевенная, дом 4, оф. 9' type="text" name="postal_addr" maxlength="500" required="" value="{{ companyloc.postal_addr }}" id="id_postal_addr">
+        <label class="control-label" for="id_postal_addr"><small>Тут комментарий по заполнению</small></label>
+        <div><br></div>
+      </div>
+
+      <div class="form-group">
+        <label class="control-label" for="id_tel">Телефон:</label>
+        <input class="form-control" placeholder='+7 (954) 754-65-78' type="text" name="tel" maxlength="25" required="" value="{{ companyloc.tel }}" id="id_tel">
+        <label class="control-label" for="id_tel"><small>Тут комментарий по заполнению</small></label>
+        <div><br></div>
+      </div>
+
+      <div class="form-group">
+        <label class="control-label" for="id_email">E-mail:</label>
+        <input class="form-control" placeholder='papa@gsx.com' type="text" name="email" maxlength="25" required="" value="{{ companyloc.email }}" id="id_email">
+        <label class="control-label" for="id_email"><small>Тут комментарий по заполнению</small></label>
         <div><br></div>
       </div>
 
     </div>
   </div>
 
-  <div class="form-group">
-    <div class="col-sm-offset-2 col-sm-10">
-      <span class="test-danger small"><ul class="errorlist"><li>This field is required.</li></ul></span>
+  <br><h3>Банковские реквизиты</h3><br>
+
+  <div class="row">
+    <div class="row row-cols-3">
+
+      <div class="form-group">
+        <label class="control-label" for="id_bank_name">Название банка:</label>
+        <input class="form-control" placeholder='Точка ПАО Банка "ФК Открытие"' type="text" name="bank_name" maxlength="500" required="" value="{{ companyloc.bank_name }}" id="id_bank_name">
+        <label class="control-label" for="id_bank_name"><small>Тут комментарий по заполнению</small></label>
+        <div><br></div>
+      </div>
+
+      <div class="form-group">
+        <label class="control-label" for="id_bic">БИК:</label>
+        <input class="form-control" placeholder="044568399" type="text" name="bic" maxlength="500" required="" value="{{ companyloc.bic }}" id="id_bic">
+        <label class="control-label" for="id_bic"><small>Тут комментарий по заполнению</small></label>
+        <div><br></div>
+      </div>
+
+      <div class="form-group">
+        <label class="control-label" for="id_curr_acc">Расчетный счет:</label>
+        <input class="form-control" placeholder="40702818573540176639" type="text" name="curr_acc" maxlength="100" required="" value="{{ companyloc.curr_acc }}" id="id_curr_acc">
+        <label class="control-label" for="id_curr_acc"><small>Тут комментарий по заполнению</small></label>
+        <div><br></div>
+      </div>
+
+      <div class="form-group">
+        <label class="control-label" for="id_corr_acc">Корреспондентский счет:</label>
+        <input class="form-control" placeholder="30101816487910000999" type="text" name="corr_acc" maxlength="100" required="" value="{{ companyloc.corr_acc }}" id="id_corr_acc">
+        <label class="control-label" for="id_corr_acc"><small>Тут комментарий по заполнению</small></label>
+        <div><br></div>
+      </div>
+
     </div>
-    <label class="control-label col-sm-2"><label for="id_legal_addr">Legal addr:</label></label>
-    <div class="col-sm-10"><input type="text" name="legal_addr" maxlength="500" required="" id="id_legal_addr"></div>
   </div>
 
-  <div class="form-group">
-    <div class="col-sm-offset-2 col-sm-10">
-      <span class="test-danger small"><ul class="errorlist"><li>This field is required.</li></ul></span>
-    </div>
-    <label class="control-label col-sm-2"><label for="id_postal_addr">Postal addr:</label></label>
-    <div class="col-sm-10"><input type="text" name="postal_addr" maxlength="500" required="" id="id_postal_addr"></div>
-  </div>
+  <br><h3>Коды</h3><br>
 
-  <div class="form-group">
-    <div class="col-sm-offset-2 col-sm-10">
-      <span class="test-danger small"><ul class="errorlist"><li>This field is required.</li></ul></span>
-    </div>
-    <label class="control-label col-sm-2"><label for="id_tel">Tel:</label></label>
-    <div class="col-sm-10"><input type="text" name="tel" maxlength="100" required="" id="id_tel"></div>
-  </div>
+  <div class="row">
+    <div class="row row-cols-3">
 
-  <div class="form-group">
-    <div class="col-sm-offset-2 col-sm-10">
-      <span class="test-danger small"><ul class="errorlist"><li>This field is required.</li></ul></span>
-    </div>
-    <label class="control-label col-sm-2"><label for="id_email">Email:</label></label>
-    <div class="col-sm-10"><input type="text" name="email" maxlength="100" required="" id="id_email"></div>
-  </div>
+      <div class="form-group">
+        <label class="control-label" for="id_inn">ИНН:</label>
+        <input class="form-control" placeholder="7810969283" type="text" name="inn" maxlength="100" required="" value="{{ companyloc.inn }}" id="id_inn">
+        <label class="control-label" for="id_inn"><small>Тут комментарий по заполнению</small></label>
+        <div><br></div>
+      </div>
 
-  <div class="form-group">
-    <div class="col-sm-offset-2 col-sm-10">
-      <span class="test-danger small"><ul class="errorlist"><li>This field is required.</li></ul></span>
-    </div>
-    <label class="control-label col-sm-2"><label for="id_bank_name">Bank name:</label></label>
-    <div class="col-sm-10"><input type="text" name="bank_name" maxlength="250" required="" id="id_bank_name"></div>
-  </div>
+      <div class="form-group">
+        <label class="control-label" for="id_kpp">КПП:</label>
+        <input class="form-control" placeholder="781153001" type="text" name="kpp" maxlength="100" required="" value="{{ companyloc.kpp }}" id="id_kpp">
+        <label class="control-label" for="id_kpp"><small>Тут комментарий по заполнению</small></label>
+        <div><br></div>
+      </div>
 
-  <div class="form-group">
-    <div class="col-sm-offset-2 col-sm-10">
-      <span class="test-danger small"><ul class="errorlist"><li>This field is required.</li></ul></span>
-    </div>
-    <label class="control-label col-sm-2"><label for="id_bic">Bic:</label></label>
-    <div class="col-sm-10"><input type="text" name="bic" maxlength="50" required="" id="id_bic"></div>
-  </div>
+      <div class="form-group">
+        <label class="control-label" for="id_ogrn">ОГРН:</label>
+        <input class="form-control" placeholder="1114237284031" type="text" name="ogrn" maxlength="100" required="" value="{{ companyloc.ogrn }}" id="id_ogrn">
+        <label class="control-label" for="id_ogrn"><small>Тут комментарий по заполнению</small></label>
+        <div><br></div>
+      </div>
 
-  <div class="form-group">
-    <div class="col-sm-offset-2 col-sm-10">
-      <span class="test-danger small"><ul class="errorlist"><li>This field is required.</li></ul></span>
-    </div>
-    <label class="control-label col-sm-2"><label for="id_curr_acc">Curr acc:</label></label>
-    <div class="col-sm-10"><input type="text" name="curr_acc" maxlength="250" required="" id="id_curr_acc"></div>
-  </div>
+      <div class="form-group">
+        <label class="control-label" for="id_okpo">ОКПО:</label>
+        <input class="form-control" placeholder="19217469" type="text" name="okpo" maxlength="100" required="" value="{{ companyloc.okpo }}" id="id_okpo">
+        <label class="control-label" for="id_okpo"><small>Тут комментарий по заполнению</small></label>
+        <div><br></div>
+      </div>
 
-  <div class="form-group">
-    <div class="col-sm-offset-2 col-sm-10">
-      <span class="test-danger small"><ul class="errorlist"><li>This field is required.</li></ul></span>
     </div>
-    <label class="control-label col-sm-2"><label for="id_corr_acc">Corr acc:</label></label>
-    <div class="col-sm-10"><input type="text" name="corr_acc" maxlength="250" required="" id="id_corr_acc"></div>
-  </div>
-
-  <div class="form-group">
-    <div class="col-sm-offset-2 col-sm-10">
-      <span class="test-danger small"><ul class="errorlist"><li>This field is required.</li></ul></span>
-    </div>
-    <label class="control-label col-sm-2"><label for="id_inn">Inn:</label></label>
-    <div class="col-sm-10"><input type="text" name="inn" maxlength="250" required="" id="id_inn"></div>
-  </div>
-
-  <div class="form-group">
-    <div class="col-sm-offset-2 col-sm-10">
-      <span class="test-danger small"><ul class="errorlist"><li>This field is required.</li></ul></span>
-    </div>
-    <label class="control-label col-sm-2"><label for="id_kpp">Kpp:</label></label>
-    <div class="col-sm-10"><input type="text" name="kpp" maxlength="250" required="" id="id_kpp"></div>
-  </div>
-
-  <div class="form-group">
-    <div class="col-sm-offset-2 col-sm-10">
-      <span class="test-danger small"><ul class="errorlist"><li>This field is required.</li></ul></span>
-    </div>
-    <label class="control-label col-sm-2"><label for="id_ogrn">Ogrn:</label></label>
-    <div class="col-sm-10"><input type="text" name="ogrn" maxlength="250" required="" id="id_ogrn"></div>
-  </div>
-
-  <div class="form-group">
-    <div class="col-sm-offset-2 col-sm-10">
-      <span class="test-danger small"><ul class="errorlist"><li>This field is required.</li></ul></span>
-    </div>
-    <label class="control-label col-sm-2"><label for="id_okpo">Okpo:</label></label>
-    <div class="col-sm-10"><input type="text" name="okpo" maxlength="250" required="" id="id_okpo"></div>
   </div>
 
 </div>
