@@ -1,0 +1,22 @@
+{% extends 'companies/base.html' %}
+
+{% block body %}
+    <br><br><br>
+
+    <div>
+        <h2>Локальные профили</h2>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="row row-cols-3">
+                    {% for company_loc in all_companies_loc %}
+                        <div class="col-lg-4 yellow">
+                            <li><a href="detail_loc/{{ company_loc.id }}/">{{ company_loc.company_name }}</a> </li>
+                        </div>
+
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

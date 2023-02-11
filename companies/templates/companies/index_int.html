@@ -1,0 +1,14 @@
+{% extends 'companies/base.html' %}
+
+{% block body %}
+    <br><br>
+
+    <div>
+        <h3>Список интернациональных компаний</h3>
+        <ul>
+            {% for company_int in all_companies_int %}
+            <li><a href="detail_int/{{ company_int.id }}/">{{ company_int.company_name }}</a> </li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endblock %}

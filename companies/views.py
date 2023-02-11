@@ -3,15 +3,21 @@ from django.shortcuts import render, get_object_or_404
 from .models import CompanyLoc, CompanyInt
 from django.views.generic.edit import CreateView, UpdateView
 
-def index(request):
+def index_loc(request):
     all_companies_loc = CompanyLoc.objects.all()
-    all_companies_int = CompanyInt.objects.all()
     context = {
         'all_companies_loc': all_companies_loc,
+    }
+
+    return render(request, 'companies/index_loc.html', context)
+
+def index_int(request):
+    all_companies_int = CompanyInt.objects.all()
+    context = {
         'all_companies_int': all_companies_int,
     }
 
-    return render(request, 'companies/index.html', context)
+    return render(request, 'companies/index_int.html', context)
 
 
 def register_loc(request):
