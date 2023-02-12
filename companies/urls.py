@@ -1,6 +1,7 @@
 from django.urls import path
 from . import views
 
+app_name = "companies"
 
 urlpatterns = [
     # /companies/index_loc
@@ -12,8 +13,11 @@ urlpatterns = [
     # /companies/register_loc/some_new_companyloc_id
     path(r'register_loc/', views.CompanyLocCreate.as_view(), name='register_loc'),
 
-    # /companies/detail_loc/some_id/
-    path('index_loc/<int:companyloc_id>/', views.detail_loc, name='detail_loc'),
+    # /companies/index_loc/some_id/delete_loc
+    path(r'index_loc/<int:companyloc_id>/delete_loc/', views.CompanyLocDelete.as_view(), name='delete_loc'),
+
+    # /companies/index_loc/some_id/
+    path('index_loc/<int:pk>/', views.CompanyLocUpdate.as_view(), name='detail_loc'),
 
     # /companies/register_int/
     path('register_int/', views.register_int, name='register_int'),
