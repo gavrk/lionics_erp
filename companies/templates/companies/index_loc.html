@@ -9,9 +9,16 @@
             <div class="row">
                 <div class="row row-cols-3">
                     {% for company_loc in all_companies_loc %}
-                        <div class="col-lg-4 yellow">
-                            <li><a href="detail_loc/{{ company_loc.id }}/">{{ company_loc.company_name }}</a> </li>
+                        <div class="card" style="width: 18rem;">
+                            <div class="card-body">
+                                <h5 href="detail_loc/{{ company_loc.id }}/" class="card-title">{{ company_loc.company_name }}</h5>
+                                <h6 class="card-subtitle mb-2 text-muted">{{ company_loc.company_type }}</h6>
+                                <p class="card-text">Тел: {{ company_loc.tel }}</p>
+                                <p class="card-text">E-mail: {{ company_loc.email }}</p>
+                                <p class="card-text">ИНН: {{ company_loc.inn }}</p>
+                            </div>
                         </div>
+
 
                     {% endfor %}
                 </div>
