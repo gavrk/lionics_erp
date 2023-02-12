@@ -3,26 +3,24 @@
 {% block body %}
     <br><br><br>
 
-    <div>
+    <div class="container-fluid">
         <h2>Локальные профили</h2>
+        <br>
         <div class="container-fluid">
-            <div class="row">
-                <div class="row row-cols-3">
+                <div class="row row-cols-2 row-cols-lg-5">
                     {% for company_loc in all_companies_loc %}
-                        <div class="card" style="width: 18rem;">
+                    <div class="col">
+                        <div class="card text-bg-light mb-3">
+                            <div class="card-header">{{ company_loc.company_type}}</div>
                             <div class="card-body">
-                                <h5 href="detail_loc/{{ company_loc.id }}/" class="card-title">{{ company_loc.company_name }}</h5>
-                                <h6 class="card-subtitle mb-2 text-muted">{{ company_loc.company_type }}</h6>
-                                <p class="card-text">Тел: {{ company_loc.tel }}</p>
-                                <p class="card-text">E-mail: {{ company_loc.email }}</p>
-                                <p class="card-text">ИНН: {{ company_loc.inn }}</p>
+                                <h5 class="card-title">{{ company_loc.company_name }}</h5>
+                                <p class="card-text">E-mail: {{ company_loc.email }} <br> Тел: {{ company_loc.tel }} <br> ИНН: {{ company_loc.inn }}</p>
+                                <a href="{{ company_loc.id }}" class="card-link">Редактировать</a>
                             </div>
                         </div>
-
-
+                    </div>
                     {% endfor %}
                 </div>
-            </div>
         </div>
     </div>
 
