@@ -15,7 +15,16 @@
                             <div class="card-body">
                                 <h5 class="card-title">{{ company_loc.company_name }}</h5>
                                 <p class="card-text">E-mail: {{ company_loc.email }} <br> Тел: {{ company_loc.tel }} <br> ИНН: {{ company_loc.inn }}</p>
-                                <a href="{% url 'companies:detail_loc' company_loc.id %}" class="card-link">Редактировать</a>
+                                    <form action="{% url 'companies:delete_loc' company_loc.id %}" method="post" style="display: inline;">
+                                        {% csrf_token %}
+                                        <input type="hidden" name="companyloc_id" value="{{ company_loc.id }}"/>
+                                        <div class="btn-group" role="group" aria-label="Basic example">
+                                            <a type="button" href="{% url 'companies:detail_loc' company_loc.id %}" class="btn btn-primary">Редактировать</a>
+                                            <button type="submit" class="btn btn-danger btn-primary">
+                                                <span class="glyphicon glyphicon-trash"></span>
+                                                Удалить</button>
+                                        </div>
+                                    </form>
                             </div>
                         </div>
                     </div>

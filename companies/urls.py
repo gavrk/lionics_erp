@@ -14,7 +14,7 @@ urlpatterns = [
     path(r'register_loc/', views.CompanyLocCreate.as_view(), name='register_loc'),
 
     # /companies/index_loc/some_id/delete_loc
-    path(r'index_loc/<int:companyloc_id>/delete_loc/', views.CompanyLocDelete.as_view(), name='delete_loc'),
+    path(r'index_loc/<int:pk>/delete_loc/', views.CompanyLocDelete.as_view(), name='delete_loc'),
 
     # /companies/index_loc/some_id/
     path('index_loc/<int:pk>/', views.CompanyLocUpdate.as_view(), name='detail_loc'),
