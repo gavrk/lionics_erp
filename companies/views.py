@@ -38,19 +38,64 @@ def detail_int(request, companyint_id):
 @method_decorator(csrf_exempt, name='dispatch')
 class CompanyLocCreate(CreateView):
     model = CompanyLoc
-    fields = ['company_type', 'company_name', 'pos_per_acc', 'position_nom', 'person_nom', 'acting_on',
-              'passport_series', 'passport_number', 'pass_issued_by', 'pass_issued_date', 'pass_issued_code',
-              'legal_addr', 'registration_addr', 'postal_addr', 'tel', 'email', 'bank_name', 'bic', 'curr_acc', 'corr_acc',
-              'inn', 'kpp', 'ogrn', 'okpo']
+    fields = [
+        'company_type',
+        'company_name',
+        'pos_per_acc',
+        'position_nom',
+        'person_nom',
+        'acting_on',
+        'legal_addr',
+        'passport_series',
+        'passport_number',
+        'pass_issued_by',
+        'pass_issued_date',
+        'pass_issued_code',
+        'postal_addr',
+        'registration_addr',
+        'tel',
+        'email',
+        'bank_name',
+        'bic',
+        'curr_acc',
+        'corr_acc',
+        'inn',
+        'kpp',
+        'ogrn',
+        'okpo',
+    ]
     success_url = reverse_lazy('companies:index_loc')
 
 @method_decorator(csrf_exempt, name='dispatch')
 class CompanyLocUpdate(UpdateView):
     model = CompanyLoc
-    fields = ['company_type', 'company_name', 'pos_per_acc', 'position_nom', 'person_nom', 'acting_on',
-              'passport_series', 'passport_number', 'pass_issued_by', 'pass_issued_date', 'pass_issued_code',
-              'legal_addr', 'registration_addr', 'postal_addr', 'tel', 'email', 'bank_name', 'bic', 'curr_acc',
-              'corr_acc', 'inn', 'kpp', 'ogrn', 'okpo']
+    fields = [
+        'company_type',
+        'company_name',
+        'pos_per_acc',
+        'position_nom',
+        'person_nom',
+        'acting_on',
+        'legal_addr',
+        'passport_series',
+        'passport_number',
+        'pass_issued_by',
+        'pass_issued_date',
+        'pass_issued_code',
+        'postal_addr',
+        'registration_addr',
+        'tel',
+        'email',
+        'bank_name',
+        'bic',
+        'curr_acc',
+        'corr_acc',
+        'inn',
+        'kpp',
+        'ogrn',
+        'okpo',
+    ]
+    success_url = reverse_lazy('companies:index_loc')
 
 @method_decorator(csrf_exempt, name='dispatch')
 class CompanyLocDelete(DeleteView):

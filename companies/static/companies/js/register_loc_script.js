@@ -18,79 +18,114 @@ const passIssuedCode = document.getElementById("id_pass_issued_code");
 
 companyType.addEventListener("keyup", (e) => {
   const value = e.currentTarget.value;
-  companyName.disabled = true;
-  posPerAcc.disabled = true;
-  positionNom.disabled = true;
-  actingOn.disabled = true;
-  legalAddr.disabled = true;
-  registrationAddr.disabled = true;
-  kpp.disabled = true;
-  ogrn.disabled = true;
-  okpo.disabled = true;
-  passportSeries.disabled = true;
-  passportNumber.disabled = true;
-  passIssuedBy.disabled = true;
-  passIssuedDate.disabled = true;
-  passIssuedCode.disabled = true;
 
 
   if (value === "ООО") {
-    companyName.disabled = false;
-    posPerAcc.disabled = false;
-    positionNom.disabled = false;
-    actingOn.disabled = false;
-    legalAddr.disabled = false;
-    kpp.disabled = false;
-    ogrn.disabled = false;
-    okpo.disabled = false;
+    companyName.value = "";
+    registrationAddr.value = "НЕ ЗАПОЛНЯЕТСЯ";
+    posPerAcc.value = "";
+    positionNom.value = "";
+    actingOn.value = "";
+    legalAddr.value = "";
+    postalAddr.readonly = "";
+    kpp.value = "";
+    ogrn.value = "";
+    okpo.value = "";
+    passportSeries.value = "НЕ ЗАПОЛНЯЕТСЯ";
+    passportNumber.value = "НЕ ЗАПОЛНЯЕТСЯ";
+    passIssuedBy.value = "НЕ ЗАПОЛНЯЕТСЯ";
+    passIssuedDate.value = "НЕ ЗАПОЛНЯЕТСЯ";
+    passIssuedCode.value = "НЕ ЗАПОЛНЯЕТСЯ";
   }
 
   if (value === "ЗАО") {
-    companyName.disabled = false;
-    posPerAcc.disabled = false;
-    positionNom.disabled = false;
-    actingOn.disabled = false;
-    legalAddr.disabled = false;
-    kpp.disabled = false;
-    ogrn.disabled = false;
-    okpo.disabled = false;
+    companyName.value = "";
+    registrationAddr.value = "НЕ ЗАПОЛНЯЕТСЯ";
+    posPerAcc.value = "";
+    positionNom.value = "";
+    actingOn.value = "";
+    legalAddr.value = "";
+    postalAddr.readonly = "";
+    kpp.value = "";
+    ogrn.value = "";
+    okpo.value = "";
+    passportSeries.value = "НЕ ЗАПОЛНЯЕТСЯ";
+    passportNumber.value = "НЕ ЗАПОЛНЯЕТСЯ";
+    passIssuedBy.value = "НЕ ЗАПОЛНЯЕТСЯ";
+    passIssuedDate.value = "НЕ ЗАПОЛНЯЕТСЯ";
+    passIssuedCode.value = "НЕ ЗАПОЛНЯЕТСЯ";
   }
 
   if (value === "АО") {
-    companyName.disabled = false;
-    posPerAcc.disabled = false;
-    positionNom.disabled = false;
-    actingOn.disabled = false;
-    legalAddr.disabled = false;
-    kpp.disabled = false;
-    ogrn.disabled = false;
-    okpo.disabled = false;
+    companyName.value = "";
+    registrationAddr.value = "НЕ ЗАПОЛНЯЕТСЯ";
+    posPerAcc.value = "";
+    positionNom.value = "";
+    actingOn.value = "";
+    legalAddr.value = "";
+    postalAddr.readonly = "";
+    kpp.value = "";
+    ogrn.value = "";
+    okpo.value = "";
+    passportSeries.value = "НЕ ЗАПОЛНЯЕТСЯ";
+    passportNumber.value = "НЕ ЗАПОЛНЯЕТСЯ";
+    passIssuedBy.value = "НЕ ЗАПОЛНЯЕТСЯ";
+    passIssuedDate.value = "НЕ ЗАПОЛНЯЕТСЯ";
+    passIssuedCode.value = "НЕ ЗАПОЛНЯЕТСЯ";
   }
 
   if (value === "ОАО") {
-    companyName.disabled = false;
-    posPerAcc.disabled = false;
-    positionNom.disabled = false;
-    actingOn.disabled = false;
-    legalAddr.disabled = false;
-    kpp.disabled = false;
-    ogrn.disabled = false;
-    okpo.disabled = false;
+    companyName.value = "";
+    registrationAddr.value = "НЕ ЗАПОЛНЯЕТСЯ";
+    posPerAcc.value = "";
+    positionNom.value = "";
+    actingOn.value = "";
+    legalAddr.value = "";
+    postalAddr.readonly = "";
+    kpp.value = "";
+    ogrn.value = "";
+    okpo.value = "";
+    passportSeries.value = "НЕ ЗАПОЛНЯЕТСЯ";
+    passportNumber.value = "НЕ ЗАПОЛНЯЕТСЯ";
+    passIssuedBy.value = "НЕ ЗАПОЛНЯЕТСЯ";
+    passIssuedDate.value = "НЕ ЗАПОЛНЯЕТСЯ";
+    passIssuedCode.value = "НЕ ЗАПОЛНЯЕТСЯ";
   }
 
   if (value === "ИП") {
-    registrationAddr.disabled = false;
-    ogrn.disabled = false;
-    okpo.disabled = false;
+    companyName.value = "НЕ ЗАПОЛНЯЕТСЯ";
+    registrationAddr.value = "";
+    posPerAcc.value = "НЕ ЗАПОЛНЯЕТСЯ";
+    positionNom.value = "НЕ ЗАПОЛНЯЕТСЯ";
+    actingOn.value = "НЕ ЗАПОЛНЯЕТСЯ";
+    legalAddr.value = "НЕ ЗАПОЛНЯЕТСЯ";
+    postalAddr.readonly = "";
+    kpp.value = "НЕ ЗАПОЛНЯЕТСЯ";
+    ogrn.value = "";
+    okpo.value = "";
+    passportSeries.value = "НЕ ЗАПОЛНЯЕТСЯ";
+    passportNumber.value = "НЕ ЗАПОЛНЯЕТСЯ";
+    passIssuedBy.value = "НЕ ЗАПОЛНЯЕТСЯ";
+    passIssuedDate.value = "НЕ ЗАПОЛНЯЕТСЯ";
+    passIssuedCode.value = "НЕ ЗАПОЛНЯЕТСЯ";
   }
 
   if (value === "Физлицо") {
-    registrationAddr.disabled = false;
-    passportSeries.disabled = false;
-    passportNumber.disabled = false;
-    passIssuedBy.disabled = false;
-    passIssuedDate.disabled = false;
-    passIssuedCode.disabled = false;
+    companyName.value = "НЕ ЗАПОЛНЯЕТСЯ";
+    registrationAddr.value = "";
+    posPerAcc.value = "НЕ ЗАПОЛНЯЕТСЯ";
+    positionNom.value = "НЕ ЗАПОЛНЯЕТСЯ";
+    actingOn.value = "НЕ ЗАПОЛНЯЕТСЯ";
+    legalAddr.value = "НЕ ЗАПОЛНЯЕТСЯ";
+    postalAddr.readonly = "";
+    kpp.value = "НЕ ЗАПОЛНЯЕТСЯ";
+    ogrn.value = "НЕ ЗАПОЛНЯЕТСЯ";
+    okpo.value = "НЕ ЗАПОЛНЯЕТСЯ";
+    passportSeries.value = "";
+    passportNumber.value = "";
+    passIssuedBy.value = "";
+    passIssuedDate.value = "";
+    passIssuedCode.value = "";
   }
 
 });
