@@ -12,20 +12,14 @@
 
       <div class="form-group">
         <label class="control-label" for="id_company_type">Форма собственности:</label>
-        <select class="form-select" name="company_type" id="id_company_type" required="" value="{{ companyloc.company_type }}" aria-label="Default select example">
-          <option selected>Общество с ограниченной ответственностью</option>
-          <option>Индивидуальный предприниматель</option>
-          <option>Физическое лицо</option>
-          <option>Закрытое акционерное общество</option>
-          <option>Открытое акционерное общество</option>
-        </select>
-        <label class="control-label" for="id_company_type"><small>Тут комментарий по заполнению</small></label>
+        <input class="form-control" placeholder='ООО' type="text" name="company_type" maxlength="250" required="" value="{{ companyloc.company_type }}" id="id_company_type">
+        <label class="control-label" for="id_company_type"><small>Введите "ООО", "ИП", "Физлицо", "ЗАО", "АО", "ОАО"</small></label>
         <div><br></div>
       </div>
 
       <div class="form-group">
         <label class="control-label" for="id_company_name">Имя компании:</label>
-        <input class="form-control" placeholder='Мастодонт' type="text" name="company_name" maxlength="250" required="" value="{{ companyloc.company_name }}" id="id_company_name">
+        <input class="form-control" disabled placeholder='Мастодонт' type="text" name="company_name" maxlength="250" required="" value="{{ companyloc.company_name }}" id="id_company_name">
         <label class="control-label" for="id_company_name"><small>Тут комментарий по заполнению</small></label>
         <div><br></div>
       </div>
@@ -40,29 +34,64 @@
 
       <div class="form-group">
         <label class="control-label" for="id_pos_per_acc">Должность и ФИО в род. падеже:</label>
-        <input class="form-control" placeholder='генерального директора Христозопуло Давида Виссарионовича' type="text" name="pos_per_acc" maxlength="250" required="" value="{{ companyloc.pos_per_acc }}" id="id_pos_per_acc">
+        <input class="form-control" disabled placeholder='генерального директора Христозопуло Давида Виссарионовича' type="text" name="id_pos_per_acc" maxlength="250" required="" value="{{ companyloc.pos_per_acc }}" id="id_pos_per_acc">
         <label class="control-label" for="id_pos_per_acc"><small>Тут комментарий по заполнению</small></label>
         <div><br></div>
       </div>
 
       <div class="form-group">
         <label class="control-label" for="id_position_nom">Должность представителя в им. падеже:</label>
-        <input class="form-control" placeholder='Генеральный директор' type="text" name="position_nom" maxlength="250" required="" value="{{ companyloc.position_nom }}" id="id_position_nom">
+        <input class="form-control" disabled placeholder='Генеральный директор' type="text" name="id_position_nom" maxlength="250" required="" value="{{ companyloc.position_nom }}" id="id_position_nom">
         <label class="control-label" for="id_position_nom"><small>Тут комментарий по заполнению</small></label>
         <div><br></div>
       </div>
 
       <div class="form-group">
         <label class="control-label" for="id_person_nom">ФИО представителя в им. падеже:</label>
-        <input class="form-control" placeholder='Христозопуло Давид Виссарионович' type="text" name="person_nom" maxlength="250" required="" value="{{ companyloc.person_nom }}" id="id_person_nom">
+        <input class="form-control" placeholder='Христозопуло Давид Виссарионович' type="text" name="id_person_nom" maxlength="250" required="" value="{{ companyloc.person_nom }}" id="id_person_nom">
         <label class="control-label" for="id_person_nom"><small>Тут комментарий по заполнению</small></label>
         <div><br></div>
       </div>
 
       <div class="form-group">
         <label class="control-label" for="id_acting_on">Действует на основании (род. падеж):</label>
-        <input class="form-control" placeholder='Устава' type="text" name="acting_on" maxlength="250" required="" value="{{ companyloc.acting_on }}" id="id_acting_on">
+        <input class="form-control" disabled placeholder='Устава' type="text" name="id_acting_on" maxlength="250" required="" value="{{ companyloc.acting_on }}" id="id_acting_on">
         <label class="control-label" for="id_acting_on"><small>Тут комментарий по заполнению</small></label>
+        <div><br></div>
+      </div>
+
+      <div class="form-group">
+        <label class="control-label" for="id_passport_series">Серия паспорта:</label>
+        <input class="form-control" disabled placeholder='4089' type="text" name="id_passport_series" maxlength="250" required="" value="{{ companyloc.passport_series }}" id="id_passport_series">
+        <label class="control-label" for="id_passport_series"><small>Тут комментарий по заполнению</small></label>
+        <div><br></div>
+      </div>
+
+      <div class="form-group">
+        <label class="control-label" for="id_passport_number">Номер паспорта:</label>
+        <input class="form-control" disabled placeholder='956142' type="text" name="id_passport_number" maxlength="250" required="" value="{{ companyloc.passport_number }}" id="id_passport_number">
+        <label class="control-label" for="id_passport_number"><small>Тут комментарий по заполнению</small></label>
+        <div><br></div>
+      </div>
+
+      <div class="form-group">
+        <label class="control-label" for="id_pass_issued_by">Кем выдан паспорт, в род. падеже:</label>
+        <input class="form-control" disabled placeholder='Отделом милиции №12 Невского р-на г. СПб' type="text" name="id_pass_issued_by" maxlength="250" required="" value="{{ companyloc.pass_issued_by }}" id="id_pass_issued_by">
+        <label class="control-label" for="id_pass_issued_by"><small>Тут комментарий по заполнению</small></label>
+        <div><br></div>
+      </div>
+
+      <div class="form-group">
+        <label class="control-label" for="id_pass_issued_date">Дата выдачи паспорта:</label>
+        <input class="form-control" disabled placeholder='26.12.2000' type="text" name="id_pass_issued_date" maxlength="50" required="" value="{{ companyloc.pass_issued_date }}" id="id_pass_issued_date">
+        <label class="control-label" for="id_pass_issued_date"><small>Тут комментарий по заполнению</small></label>
+        <div><br></div>
+      </div>
+
+      <div class="form-group">
+        <label class="control-label" for="id_pass_issued_code">Код подразделения, выдавшего паспорт:</label>
+        <input class="form-control" disabled placeholder='817-512' type="text" name="id_pass_issued_code" maxlength="250" required="" value="{{ companyloc.pass_issued_code }}" id="id_pass_issued_code">
+        <label class="control-label" for="id_pass_issued_code"><small>Тут комментарий по заполнению</small></label>
         <div><br></div>
       </div>
 
@@ -76,14 +105,21 @@
 
       <div class="form-group">
         <label class="control-label" for="id_legal_addr">Юридический адрес:</label>
-        <input class="form-control" placeholder='603001, г. Н. Новгород, ул. Кожевенная, дом 4, оф. 9' type="text" name="legal_addr" maxlength="500" required="" value="{{ companyloc.legal_addr }}" id="id_legal_addr">
+        <input class="form-control" disabled placeholder='603001, г. Н. Новгород, ул. Кожевенная, дом 4, оф. 9' type="text" name="id_legal_addr" maxlength="500" required="" value="{{ companyloc.legal_addr }}" id="id_legal_addr">
         <label class="control-label" for="id_legal_addr"><small>Тут комментарий по заполнению</small></label>
         <div><br></div>
       </div>
 
       <div class="form-group">
+        <label class="control-label" for="id_registration_addr">Адрес регистрации физлица/ИП:</label>
+        <input class="form-control" disabled placeholder='603001, г. Н. Новгород, ул. Кожевенная, дом 4, оф. 9' type="text" name="id_registration_addr" maxlength="500" required="" value="{{ companyloc.registration_addr }}" id="id_registration_addr">
+        <label class="control-label" for="id_registration_addr"><small>Тут комментарий по заполнению</small></label>
+        <div><br></div>
+      </div>
+
+      <div class="form-group">
         <label class="control-label" for="id_postal_addr">Почтовый адрес:</label>
-        <input class="form-control" placeholder='603001, г. Н. Новгород, ул. Кожевенная, дом 4, оф. 9' type="text" name="postal_addr" maxlength="500" required="" value="{{ companyloc.postal_addr }}" id="id_postal_addr">
+        <input class="form-control" placeholder='603001, г. Н. Новгород, ул. Кожевенная, дом 4, оф. 9' type="text" name="id_postal_addr" maxlength="500" value="{{ companyloc.postal_addr }}" id="id_postal_addr">
         <label class="control-label" for="id_postal_addr"><small>Тут комментарий по заполнению</small></label>
         <div><br></div>
       </div>
@@ -155,26 +191,29 @@
 
       <div class="form-group">
         <label class="control-label" for="id_kpp">КПП:</label>
-        <input class="form-control" placeholder="781153001" type="text" name="kpp" maxlength="100" required="" value="{{ companyloc.kpp }}" id="id_kpp">
+        <input class="form-control" disabled placeholder="781153001" type="text" name="id_kpp" maxlength="100" required="" value="{{ companyloc.kpp }}" id="id_kpp">
         <label class="control-label" for="id_kpp"><small>Тут комментарий по заполнению</small></label>
         <div><br></div>
       </div>
 
       <div class="form-group">
-        <label class="control-label" for="id_ogrn">ОГРН:</label>
-        <input class="form-control" placeholder="1114237284031" type="text" name="ogrn" maxlength="100" required="" value="{{ companyloc.ogrn }}" id="id_ogrn">
+        <label class="control-label" for="id_ogrn">ОГРН(ИП):</label>
+        <input class="form-control" disabled placeholder="1114237284031" type="text" name="id_ogrn" maxlength="100" required="" value="{{ companyloc.ogrn }}" id="id_ogrn">
         <label class="control-label" for="id_ogrn"><small>Тут комментарий по заполнению</small></label>
         <div><br></div>
       </div>
 
       <div class="form-group">
         <label class="control-label" for="id_okpo">ОКПО:</label>
-        <input class="form-control" placeholder="19217469" type="text" name="okpo" maxlength="100" required="" value="{{ companyloc.okpo }}" id="id_okpo">
+        <input class="form-control" disabled placeholder="19217469" type="text" name="id_okpo" maxlength="100" required="" value="{{ companyloc.okpo }}" id="id_okpo">
         <label class="control-label" for="id_okpo"><small>Тут комментарий по заполнению</small></label>
         <div><br></div>
       </div>
 
     </div>
   </div>
+
+  {% load static %}
+  <script src="{% static "companies/js/register_loc_script.js" %}"></script>
 
 </div>

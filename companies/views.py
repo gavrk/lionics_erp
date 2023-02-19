@@ -37,6 +37,7 @@ class CompanyLocCreate(CreateView):
     fields = ['company_type', 'company_name', 'pos_per_acc', 'position_nom', 'person_nom', 'acting_on',
               'legal_addr', 'postal_addr', 'tel', 'email', 'bank_name', 'bic', 'curr_acc', 'corr_acc',
               'inn', 'kpp', 'ogrn', 'okpo']
+    success_url = reverse_lazy('companies:index_loc')
 
 
 class CompanyLocUpdate(UpdateView):
