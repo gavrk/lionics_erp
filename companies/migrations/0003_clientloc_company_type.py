@@ -11,7 +11,7 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.AddField(
-            model_name='companyloc',
+            model_name='clientloc',
             name='company_type',
             field=models.CharField(default='Общество с ограниченной ответственностью', max_length=100),
         ),

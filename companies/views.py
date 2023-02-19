@@ -1,6 +1,6 @@
 from django.http import HttpResponse
 from django.shortcuts import render, get_object_or_404
-from .models import CompanyLoc, CompanyInt
+from .models import ClientLoc, CompanyInt
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy
 from django.views.decorators.csrf import csrf_exempt
@@ -10,7 +10,7 @@ def register_loc(request):
     return render(request, 'companies/register_loc.html')
 
 def index_loc(request):
-    all_companies_loc = CompanyLoc.objects.all()
+    all_companies_loc = ClientLoc.objects.all()
     context = {
         'all_companies_loc': all_companies_loc,
     }
@@ -32,12 +32,12 @@ def register_int(request):
 
 
 def detail_int(request, companyint_id):
-    company_int = get_object_or_404(CompanyLoc, pk=companyint_id)
+    company_int = get_object_or_404(ClientLoc, pk=companyint_id)
     return render(request, 'companies/detail_int.html', {'company_int': company_int})
 
 @method_decorator(csrf_exempt, name='dispatch')
-class CompanyLocCreate(CreateView):
-    model = CompanyLoc
+class ClientLocCreate(CreateView):
+    model = ClientLoc
     fields = [
         'company_type',
         'company_name',
@@ -67,8 +67,8 @@ class CompanyLocCreate(CreateView):
     success_url = reverse_lazy('companies:index_loc')
 
 @method_decorator(csrf_exempt, name='dispatch')
-class CompanyLocUpdate(UpdateView):
-    model = CompanyLoc
+class ClientLocUpdate(UpdateView):
+    model = ClientLoc
     fields = [
         'company_type',
         'company_name',
@@ -98,6 +98,6 @@ class CompanyLocUpdate(UpdateView):
     success_url = reverse_lazy('companies:index_loc')
 
 @method_decorator(csrf_exempt, name='dispatch')
-class CompanyLocDelete(DeleteView):
-    model = CompanyLoc
+class ClientLocDelete(DeleteView):
+    model = ClientLoc
     success_url = reverse_lazy('companies:index_loc')

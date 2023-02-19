@@ -2,7 +2,7 @@ from django.db import models
 from django.urls import reverse
 
 
-class CompanyLoc(models.Model):
+class ClientLoc(models.Model):
     company_type = models.CharField(max_length=100, default='-')
     company_name = models.CharField(max_length=250, default='-')
     pos_per_acc = models.CharField(max_length=250, default='-')

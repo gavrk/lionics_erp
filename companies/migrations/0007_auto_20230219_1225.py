@@ -11,95 +11,95 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.RemoveField(
-            model_name='companyloc',
+            model_name='clientloc',
             name='acting_on',
         ),
         migrations.RemoveField(
-            model_name='companyloc',
+            model_name='clientloc',
             name='bank_name',
         ),
         migrations.RemoveField(
-            model_name='companyloc',
+            model_name='clientloc',
             name='bic',
         ),
         migrations.RemoveField(
-            model_name='companyloc',
+            model_name='clientloc',
             name='company_name',
         ),
         migrations.RemoveField(
-            model_name='companyloc',
+            model_name='clientloc',
             name='corr_acc',
         ),
         migrations.RemoveField(
-            model_name='companyloc',
+            model_name='clientloc',
             name='curr_acc',
         ),
         migrations.RemoveField(
-            model_name='companyloc',
+            model_name='clientloc',
             name='email',
         ),
         migrations.RemoveField(
-            model_name='companyloc',
+            model_name='clientloc',
             name='inn',
         ),
         migrations.RemoveField(
-            model_name='companyloc',
+            model_name='clientloc',
             name='kpp',
         ),
         migrations.RemoveField(
-            model_name='companyloc',
+            model_name='clientloc',
             name='legal_addr',
         ),
         migrations.RemoveField(
-            model_name='companyloc',
+            model_name='clientloc',
             name='ogrn',
         ),
         migrations.RemoveField(
-            model_name='companyloc',
+            model_name='clientloc',
             name='okpo',
         ),
         migrations.RemoveField(
-            model_name='companyloc',
+            model_name='clientloc',
             name='pass_issued_by',
         ),
         migrations.RemoveField(
-            model_name='companyloc',
+            model_name='clientloc',
             name='pass_issued_code',
         ),
         migrations.RemoveField(
-            model_name='companyloc',
+            model_name='clientloc',
             name='pass_issued_date',
         ),
         migrations.RemoveField(
-            model_name='companyloc',
+            model_name='clientloc',
             name='passport_number',
         ),
         migrations.RemoveField(
-            model_name='companyloc',
+            model_name='clientloc',
             name='passport_series',
         ),
         migrations.RemoveField(
-            model_name='companyloc',
+            model_name='clientloc',
             name='person_nom',
         ),
         migrations.RemoveField(
-            model_name='companyloc',
+            model_name='clientloc',
             name='pos_per_acc',
         ),
         migrations.RemoveField(
-            model_name='companyloc',
+            model_name='clientloc',
             name='position_nom',
         ),
         migrations.RemoveField(
-            model_name='companyloc',
+            model_name='clientloc',
             name='postal_addr',
         ),
         migrations.RemoveField(
-            model_name='companyloc',
+            model_name='clientloc',
             name='registration_addr',
         ),
         migrations.RemoveField(
-            model_name='companyloc',
+            model_name='clientloc',
             name='tel',
         ),
     ]

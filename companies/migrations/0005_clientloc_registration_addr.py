@@ -6,12 +6,12 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('companies', '0004_alter_companyloc_company_type'),
+        ('companies', '0004_alter_clientloc_company_type'),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='companyloc',
+            model_name='clientloc',
             name='registration_addr',
             field=models.CharField(default='some_addr', max_length=500),
             preserve_default=False,

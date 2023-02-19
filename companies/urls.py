@@ -12,13 +12,13 @@ urlpatterns = [
     path('index_int/', views.index_int, name='index_int'),
 
     # /companies/register_loc/some_new_companyloc_id
-    path(r'register_loc/', views.CompanyLocCreate.as_view(), name='register_loc'),
+    path(r'register_loc/', views.ClientLocCreate.as_view(), name='register_loc'),
 
     # /companies/index_loc/some_id/delete_loc
-    path(r'index_loc/<int:pk>/delete_loc/', views.CompanyLocDelete.as_view(), name='delete_loc'),
+    path(r'index_loc/<int:pk>/delete_loc/', views.ClientLocDelete.as_view(), name='delete_loc'),
 
     # /companies/index_loc/some_id/
-    path('index_loc/<int:pk>/', views.CompanyLocUpdate.as_view(), name='detail_loc'),
+    path('index_loc/<int:pk>/', views.ClientLocUpdate.as_view(), name='detail_loc'),
 
     # /companies/register_int/
     path('register_int/', views.register_int, name='register_int'),
