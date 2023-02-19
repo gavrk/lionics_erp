@@ -3,6 +3,7 @@ from . import views
 
 app_name = "companies"
 
+
 urlpatterns = [
     # /companies/index_loc
     path('index_loc/', views.index_loc, name='index_loc'),
