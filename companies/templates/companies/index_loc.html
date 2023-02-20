@@ -8,18 +8,40 @@
         <br>
         <div class="container-fluid">
                 <div class="row row-cols-2 row-cols-lg-5">
-                    {% for company_loc in all_companies_loc %}
+                    {% for client_loc in all_clientloc %}
                     <div class="col">
                         <div class="card text-bg-light mb-3">
-                            <div class="card-header">{{ company_loc.company_type}}</div>
+                            <div class="card-header">{{ client_loc.company_type}}</div>
                             <div class="card-body">
-                                <h5 class="card-title">{{ company_loc.company_name }}</h5>
-                                <p class="card-text">E-mail: {{ company_loc.email }} <br> Тел: {{ company_loc.tel }} <br> ИНН: {{ company_loc.inn }}</p>
-                                    <form action="{% url 'companies:delete_loc' company_loc.id %}" method="post" style="display: inline;">
+                                <h5 class="card-title">{{ client_loc.company_name }}</h5>
+                                <p class="card-text">E-mail: {{ client_loc.email }} <br> Тел: {{ client_loc.tel }} <br> ИНН: {{ client_loc.inn }}</p>
+                                    <form action="{% url 'companies:delete_clientloc' client_loc.id %}" method="post" style="display: inline;">
                                         {% csrf_token %}
-                                        <input type="hidden" name="companyloc_id" value="{{ company_loc.id }}"/>
+                                        <input type="hidden" name="clientloc_id" value="{{ client_loc.id }}"/>
                                         <div class="btn-group" role="group" aria-label="Basic example">
-                                            <a type="button" href="{% url 'companies:detail_loc' company_loc.id %}" class="btn btn-primary">Редактировать</a>
+                                            <a type="button" href="{% url 'companies:detail_clientloc' client_loc.id %}" class="btn btn-primary">Редактировать</a>
+                                            <button type="submit" class="btn btn-danger btn-primary">
+                                                <span class="glyphicon glyphicon-trash"></span>
+                                                Удалить</button>
+                                        </div>
+                                    </form>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+
+                    {% for own_loc in all_ownloc %}
+                    <div class="col">
+                        <div class="card text-bg-light mb-3">
+                            <div class="card-header">{{ own_loc.company_type}}</div>
+                            <div class="card-body">
+                                <h5 class="card-title">{{ own_loc.company_name }}</h5>
+                                <p class="card-text">E-mail: {{ own_loc.email }} <br> Тел: {{ own_loc.tel }} <br> ИНН: {{ own_loc.inn }}</p>
+                                    <form action="{% url 'companies:delete_clientloc' own_loc.id %}" method="post" style="display: inline;">
+                                        {% csrf_token %}
+                                        <input type="hidden" name="clientloc_id" value="{{ own_loc.id }}"/>
+                                        <div class="btn-group" role="group" aria-label="Basic example">
+                                            <a type="button" href="{% url 'companies:detail_clientloc' own_loc.id %}" class="btn btn-primary">Редактировать</a>
                                             <button type="submit" class="btn btn-danger btn-primary">
                                                 <span class="glyphicon glyphicon-trash"></span>
                                                 Удалить</button>

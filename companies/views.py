@@ -1,6 +1,6 @@
 from django.http import HttpResponse
 from django.shortcuts import render, get_object_or_404
-from .models import ClientLoc, CompanyInt
+from .models import ClientLoc, CompanyInt, OwnLoc
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy
 from django.views.decorators.csrf import csrf_exempt
@@ -10,9 +10,11 @@ def register_loc(request):
     return render(request, 'companies/register_loc.html')
 
 def index_loc(request):
-    all_companies_loc = ClientLoc.objects.all()
+    all_clientloc = ClientLoc.objects.all()
+    all_ownloc = OwnLoc.objects.all()
     context = {
-        'all_companies_loc': all_companies_loc,
+        'all_clientloc': all_clientloc,
+        'all_ownloc': all_ownloc,
     }
 
     return render(request, 'companies/index_loc.html', context)
@@ -100,4 +102,71 @@ class ClientLocUpdate(UpdateView):
 @method_decorator(csrf_exempt, name='dispatch')
 class ClientLocDelete(DeleteView):
     model = ClientLoc
+    success_url = reverse_lazy('companies:index_loc')
+
+@method_decorator(csrf_exempt, name='dispatch')
+class OwnLocCreate(CreateView):
+    model = OwnLoc
+    fields = [
+        'company_type',
+        'company_name',
+        'pos_per_acc',
+        'position_nom',
+        'person_nom',
+        'acting_on',
+        'legal_addr',
+        'passport_series',
+        'passport_number',
+        'pass_issued_by',
+        'pass_issued_date',
+        'pass_issued_code',
+        'postal_addr',
+        'registration_addr',
+        'tel',
+        'email',
+        'bank_name',
+        'bic',
+        'curr_acc',
+        'corr_acc',
+        'inn',
+        'kpp',
+        'ogrn',
+        'okpo',
+    ]
+    success_url = reverse_lazy('companies:index_loc')
+
+@method_decorator(csrf_exempt, name='dispatch')
+class OwnLocUpdate(UpdateView):
+    model = OwnLoc
+    fields = [
+        'company_type',
+        'company_name',
+        'pos_per_acc',
+        'position_nom',
+        'person_nom',
+        'acting_on',
+        'legal_addr',
+        'passport_series',
+        'passport_number',
+        'pass_issued_by',
+        'pass_issued_date',
+        'pass_issued_code',
+        'postal_addr',
+        'registration_addr',
+        'tel',
+        'email',
+        'bank_name',
+        'bic',
+        'curr_acc',
+        'corr_acc',
+        'inn',
+        'kpp',
+        'ogrn',
+        'okpo',
+    ]
+    success_url = reverse_lazy('companies:index_loc')
+
+@method_decorator(csrf_exempt, name='dispatch')
+class OwnLocDelete(DeleteView):
+    model = OwnLoc
     success_url = reverse_lazy('companies:index_loc')
