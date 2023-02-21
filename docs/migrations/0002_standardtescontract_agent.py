@@ -8,14 +8,14 @@ class Migration(migrations.Migration):
 
     dependencies = [
         ('companies', '0010_ownloc'),
-        ('doc_generator', '0001_initial'),
+        ('docs', '0001_initial'),
     ]
 
     operations = [
         migrations.AddField(
             model_name='standardtescontract',
             name='agent',
-            field=models.ForeignKey(default='some', on_delete=django.db.models.deletion.CASCADE, to='companies.ownloc'),
+            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='companies.ownloc'),
             preserve_default=False,
         ),
     ]

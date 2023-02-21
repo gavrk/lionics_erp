@@ -1,0 +1,106 @@
+{% extends 'companies/base.html' %}
+
+{% block body %}
+
+<div class="container-fluid">
+    <form class="form-horizontal" action="" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <input type="hidden" name="csrfmiddlewaretoken" value="gDaS9hZcbmQnaxKDQZju5OWt4sUCP4eiNpyslijMdcxqfiglxyPhYUGnce5mhbp7">
+        <br><br><br>
+        <h2>Создаем/редактируем стандартный договор ТЭО</h2>
+
+        <div class="container-fluid">
+
+          <br><h3>Стороны договора</h3><br>
+
+          <div class="row">
+            <div class="row row-cols-3">
+
+              <div class="form-group">
+                <label class="control-label" for="id_agent">Экспедитор:</label>
+                <select class="form-select" aria-label="Default select example" id="id_agent">
+                  {% for ownloc in all_ownloc %}
+                    <option value="1">{{ ownloc.company_type }} "{{ ownloc.company_name }}"</option>
+                  {% endfor %}
+                </select>
+                <label class="control-label" for="id_agent"><small>Введите "ООО", "ИП", "Физлицо", "ЗАО", "АО", "ОАО"</small></label>
+                <div><br></div>
+              </div>
+
+              <div class="form-group">
+                <label class="control-label" for="id_company_name">Клиент:</label>
+                <input class="form-control"  placeholder='ООО "Мастодонт"' type="text" name="company_name" maxlength="250"  value="{{ clientloc.company_name }}" id="id_company_name">
+                <label class="control-label" for="id_company_name"><small>Тут комментарий по заполнению</small></label>
+                <div><br></div>
+              </div>
+
+            </div>
+          </div>
+
+          <br><h3>Вводные данные</h3><br>
+
+          <div class="row">
+            <div class="row row-cols-3">
+
+              <div class="form-group">
+                <label class="control-label" for="id_pos_per_acc">Номер договора:</label>
+                <input class="form-control"  placeholder='SPQR-012' type="text" name="pos_per_acc" maxlength="250"  value="{{ clientloc.pos_per_acc }}" id="id_pos_per_acc">
+                <label class="control-label" for="id_pos_per_acc"><small>Тут комментарий по заполнению</small></label>
+                <div><br></div>
+              </div>
+
+              <div class="form-group">
+                <label class="control-label" for="id_position_nom">Дата договора:</label>
+                <input class="form-control"  placeholder='06.02.2025' type="text" name="position_nom" maxlength="250"  value="{{ clientloc.position_nom }}" id="id_position_nom">
+                <label class="control-label" for="id_position_nom"><small>Тут комментарий по заполнению</small></label>
+                <div><br></div>
+              </div>
+
+              <div class="form-group">
+                <label class="control-label" for="id_person_nom">Место заключения договора:</label>
+                <input class="form-control" placeholder='г. Москва' type="text" name="person_nom" maxlength="250"  value="{{ clientloc.person_nom }}" id="id_person_nom">
+                <label class="control-label" for="id_person_nom"><small>Тут комментарий по заполнению</small></label>
+                <div><br></div>
+              </div>
+
+              <div class="form-group">
+                <label class="control-label" for="id_acting_on">Действителен до:</label>
+                <input class="form-control"  placeholder='05.02.2029' type="text" name="acting_on" maxlength="250"  value="{{ clientloc.acting_on }}" id="id_acting_on">
+                <label class="control-label" for="id_acting_on"><small>Тут комментарий по заполнению</small></label>
+                <div><br></div>
+              </div>
+
+            </div>
+          </div>
+
+          <br><h3>Опции</h3><br>
+
+          <div class="row">
+            <div class="row row-cols-3">
+
+              <div class="form-group">
+                <label class="control-label" for="id_legal_addr">Сформировать на бланке:</label>
+                <input class="form-control"  placeholder='603001, г. Н. Новгород, ул. Кожевенная, дом 4, оф. 9' type="text" name="legal_addr" maxlength="500"  value="{{ clientloc.legal_addr }}" id="id_legal_addr">
+                <label class="control-label" for="id_legal_addr"><small>Тут комментарий по заполнению</small></label>
+                <div><br></div>
+              </div>
+
+              <div class="form-group">
+                <label class="control-label" for="id_registration_addr">Поставить печать:</label>
+                <input class="form-control"  placeholder='603001, г. Н. Новгород, ул. Кожевенная, дом 4, оф. 9' type="text" name="registration_addr" maxlength="500"  value="{{ clientloc.registration_addr }}" id="id_registration_addr">
+                <label class="control-label" for="id_registration_addr"><small>Тут комментарий по заполнению</small></label>
+                <div><br></div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <button type="submit" class="btn btn-success">Submit</button>
+            </div>
+        </div>
+    </form>
+</div>
+{% endblock %}

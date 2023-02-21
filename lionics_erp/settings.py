@@ -31,7 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'doc_generator.apps.DocGeneratorConfig',
+    'docs.apps.DocGeneratorConfig',
     'companies.apps.CompaniesConfig',
     'django.contrib.admin',
     'django.contrib.auth',
