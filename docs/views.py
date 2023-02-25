@@ -5,7 +5,7 @@ from django.urls import reverse_lazy
 from django.views.decorators.csrf import csrf_exempt
 from django.utils.decorators import method_decorator
 from companies.models import ClientLoc, OwnLoc
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 
 
 def index(request):
