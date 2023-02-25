@@ -34,4 +34,7 @@ urlpatterns = [
 
     # /companies/detail_int/some_id/
     path('index_int/<int:companyint_id>/', views.detail_int, name='detail_int'),
+
+    # /companies/index_loc/some_id/docs/
+    path('index_loc/<int:pk>/docs/', views.clientloc_docs, name='docs_clientloc'),
 ]

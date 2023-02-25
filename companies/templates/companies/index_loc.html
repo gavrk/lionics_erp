@@ -20,6 +20,7 @@
                                         <input type="hidden" name="clientloc_id" value="{{ client_loc.id }}"/>
                                         <div class="btn-group" role="group" aria-label="Basic example">
                                             <a type="button" href="{% url 'companies:detail_clientloc' client_loc.id %}" class="btn btn-primary">Редактировать</a>
+                                            <a type="button" href="{% url 'companies:docs_clientloc' client_loc.id %}" class="btn btn-primary">Доки</a>
                                             <button type="submit" class="btn btn-danger btn-primary">
                                                 <span class="glyphicon glyphicon-trash"></span>
                                                 Удалить</button>

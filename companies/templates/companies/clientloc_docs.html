@@ -1,0 +1,43 @@
+{% extends 'companies/base.html' %}
+
+
+{% block body %}
+    <br><br><br>
+
+        <div class="container-fluid">
+            {% if clientloc.company_type == 'ИП' %}
+                <h2>{{ clientloc.company_type }} {{ clientloc.person_nom }}</h2>
+            {% elif clientloc.company_type == 'Физлицо' %}
+                <h2>{{ clientloc.person_nom }}</h2>
+            {% else %}
+                <h2>{{ clientloc.company_type }} {{ clientloc.company_name }}</h2>
+            {% endif %}
+            <br>
+            <div class="container-fluid">
+            {% for stc in stcs %}
+                <div class="card">
+                    {% if stc.agent.company_type == 'ИП' %}
+                        <div class="card-header">Договор ТЭО № {{ stc.contract_number }} c {{ stc.agent.company_type }} {{ stc.agent.person_nom }}</div>
+                    {% elif stc.agent.company_type == 'Физлицо' %}
+                        <div class="card-header">Договор ТЭО № {{ stc.contract_number }} c физлицом {{ stc.agent.person_nom }}</div>
+                    {% else %}
+                        <div class="card-header">Договор ТЭО № {{ stc.contract_number }} c {{ stc.agent.company_type }} {{ stc.agent.company_name }}</div>
+                    {% endif %}
+                        <div class="card-body">
+                            <h5 class="card-title">Договор на транспортно-экспедиционное обслуживание</h5>
+                            <p class="card-text">Дата заключения: {{ stc.contract_date }}</p>
+                            <p class="card-text">Город: {{ stc.contract_city }}</p>
+                            <a href="{% url 'docs:detail_stc' stc.id %}" class="btn btn-primary">Редактировать</a>
+                            <a href="#" class="btn btn-primary">Сгенерировать PDF</a>
+                        </div>
+                </div>
+                <br>
+            {% endfor %}
+            </div>
+
+        </div>
+
+
+
+
+{% endblock %}

@@ -1,6 +1,7 @@
 from django.http import HttpResponse
 from django.shortcuts import render, get_object_or_404
 from .models import ClientLoc, CompanyInt, OwnLoc
+from docs.models import StandardTesContract
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy
 from django.views.decorators.csrf import csrf_exempt
@@ -170,3 +171,11 @@ class OwnLocUpdate(UpdateView):
 class OwnLocDelete(DeleteView):
     model = OwnLoc
     success_url = reverse_lazy('companies:index_loc')
+
+def clientloc_docs(request, pk):
+    clientloc = get_object_or_404(ClientLoc, pk=pk)
+    stcs = StandardTesContract.objects.filter(customer=pk)
+    return render(request, 'companies/clientloc_docs.html', {
+        'clientloc': clientloc,
+        'stcs': stcs,
+    })
