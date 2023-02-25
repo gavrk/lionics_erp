@@ -4,8 +4,8 @@ from django.urls import reverse
 
 # Create your models here.
 class StandardTesContract(models.Model):
-    agent = models.ForeignKey("companies.OwnLoc", on_delete=models.CASCADE, default='1')
-    customer = models.ForeignKey("companies.ClientLoc", on_delete=models.CASCADE, default='1')
+    agent = models.ForeignKey("companies.OwnLoc", on_delete=models.CASCADE, default=1)
+    customer = models.ForeignKey("companies.ClientLoc", on_delete=models.CASCADE, default=1)
     contract_number = models.CharField(max_length=100, default='-')
     contract_date = models.CharField(max_length=100, default='-')
     contract_city = models.CharField(max_length=250, default='-')

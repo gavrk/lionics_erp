@@ -21,11 +21,11 @@
                 <select class="form-select" name="agent" aria-label="Default select example" id="id_agent">
                   {% for ownloc in all_ownloc %}
                     {% if ownloc.company_type == 'ИП' %}
-                      <option value="{{ ownloc }}">{{ ownloc.company_type }} {{ ownloc.person_nom }}</option>
+                      <option value="{{ ownloc.pk }}">{{ ownloc.company_type }} {{ ownloc.person_nom }}</option>
                     {% elif ownloc.company_type == 'Физлицо' %}
-                      <option value="{{ ownloc }}">{{ ownloc.person_nom }}</option>
+                      <option value="{{ ownloc.pk }}">{{ ownloc.person_nom }}</option>
                     {% else %}
-                      <option value="{{ ownloc }}">{{ ownloc.company_type }} "{{ ownloc.company_name }}"</option>
+                      <option value="{{ ownloc.pk }}">{{ ownloc.company_type }} "{{ ownloc.company_name }}"</option>
                     {% endif %}
                   {% endfor %}
                 </select>
@@ -34,19 +34,19 @@
               </div>
 
               <div class="form-group">
-                <label class="control-label" for="id_client">Клиент:</label>
-                <select class="form-select" name="client" aria-label="Default select example" id="id_client">
+                <label class="control-label" for="id_customer">Клиент:</label>
+                <select class="form-select" name="customer" aria-label="Default select example" id="id_customer">
                   {% for clientloc in all_clientloc %}
                     {% if clientloc.company_type == 'ИП' %}
-                      <option value="{{ clientloc }}">{{ clientloc.company_type }} {{ clientloc.person_nom }}</option>
+                      <option value="{{ clientloc.pk }}">{{ clientloc.company_type }} {{ clientloc.person_nom }}</option>
                     {% elif clientloc.company_type == 'Физлицо' %}
-                      <option value="{{ clientloc }}">{{ clientloc.person_nom }}</option>
+                      <option value="{{ clientloc.pk }}">{{ clientloc.person_nom }}</option>
                     {% else %}
-                      <option value="{{ clientloc }}">{{ clientloc.company_type }} "{{ clientloc.company_name }}"</option>
+                      <option value="{{ clientloc.pk }}">{{ clientloc.company_type }} "{{ clientloc.company_name }}"</option>
                     {% endif %}
                   {% endfor %}
                 </select>
-                <label class="control-label" for="id_client"><small>Введите "ООО", "ИП", "Физлицо", "ЗАО", "АО", "ОАО"</small></label>
+                <label class="control-label" for="id_customer"><small>Введите "ООО", "ИП", "Физлицо", "ЗАО", "АО", "ОАО"</small></label>
                 <div><br></div>
               </div>
 
@@ -96,13 +96,13 @@
 
               <div class="form-check form-switch">
                 <label class="control-label" for="id_blank">Сформировать на бланке:</label>
-                <input class="form-check-input" name="blank" type="checkbox" value="{{ standardtescontract.blank }}" role="switch" id="id_blank">
+                <input class="form-check-input" name="blank" type="checkbox" value="True" role="switch" id="id_blank">
                 <div><br></div>
               </div>
 
               <div class="form-check form-switch">
                 <label class="control-label" for="id_stamp">Поставить печать и подпись:</label>
-                <input class="form-check-input" name="stamp" type="checkbox" value="{{ standardtescontract.stamp }}" role="switch" id="id_stamp">
+                <input class="form-check-input" name="stamp" type="checkbox" value="" role="switch" id="id_stamp">
                 <div><br></div>
               </div>
 
